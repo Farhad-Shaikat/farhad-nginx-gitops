@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: farhad-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: farhad-nginx
+  template:
+    metadata:
+      labels:
+        app: farhad-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: farhad90/farhad-nginx:v1
+        ports:
+        - containerPort: 80
+
